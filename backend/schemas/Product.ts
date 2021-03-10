@@ -1,5 +1,5 @@
 import { list } from '@keystone-next/keystone/schema';
-import { integer, select, text } from '@keystone-next/fields';
+import { integer, relationship, select, text } from '@keystone-next/fields';
 
 export const Product = list({
   fields: {
@@ -7,6 +7,16 @@ export const Product = list({
     description: text({ 
       ui: {
       displayMode: 'textarea',
+      }
+    }),
+    photos: relationship({
+      ref: 'ProductImage.product',
+      many: true,
+      ui: {
+        displayMode: 'cards',
+        cardFields: ['image', 'altText'],
+        inlineCreate: { fields: ['image', 'altText'] },
+        inlineEdit: { fields: ['image', 'altText'] },
       }
     }),
     status: select({
