@@ -1,3 +1,4 @@
+import { User } from './schemas/User';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import 'dotenv/config';
 
@@ -22,6 +23,7 @@ export default config({
   },
   lists: createSchema({
     // schema items here
+    User,
   }),
   ui: {
     // change for roles
