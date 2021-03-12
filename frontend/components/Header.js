@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Logo from './styles/Logo';
+import LogoStyles from './styles/LogoStyles';
 import HeaderStyles from './styles/HeaderStyles';
 import Nav from './Nav';
 
@@ -7,9 +7,9 @@ export default function Header() {
   return (
     <HeaderStyles>
       <div className="bar">
-        <Logo>
+        <LogoStyles>
           <Link href="/">Fight COVID</Link>
-        </Logo>
+        </LogoStyles>
       </div>
       <Nav />
       <div className="sub-bar">
