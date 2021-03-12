@@ -10,8 +10,8 @@ export default function Header() {
         <LogoStyles>
           <Link href="/">Fight COVID</Link>
         </LogoStyles>
-      </div>
       <Nav />
+      </div>
       <div className="sub-bar">
         <p>Search an Item</p>
       </div>

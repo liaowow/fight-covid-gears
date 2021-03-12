@@ -8,7 +8,7 @@ const LogoStyles = styled.h1`
   transform: skew(-7deg);
   background: var(--primary);
   a {
-    color: white;
+    color: var(--grey, black);
     text-decoration: none;
     padding: 0.5rem 1rem;
   }
