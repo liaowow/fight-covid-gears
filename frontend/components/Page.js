@@ -51,6 +51,10 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: underline;
   }
 
+  img:hover {
+    cursor: pointer;
+  }
+
   button {
     font-family: 'Patua One', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }

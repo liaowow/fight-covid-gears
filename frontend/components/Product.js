@@ -7,10 +7,12 @@ import formatMoney from '../lib/formatMoney';
 export default function Product({ product }) {
   return (
     <ItemStyles>
-      <img
-        src={product?.photo?.image?.publicUrlTransformed}
-        alt={product.name}
-      />
+      <Link href={`/product/${product.id}`}>
+        <img
+          src={product?.photo?.image?.publicUrlTransformed}
+          alt={product.name}
+        />
+      </Link>
       <TitleStyles>
         <Link href={`/product/${product.id}`}>{product.name}</Link>
       </TitleStyles>
