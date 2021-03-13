@@ -1,7 +1,7 @@
 import 'dotenv/config';
-import { relationship, text } from "@keystone-next/fields";
-import { list } from "@keystone-next/keystone/schema";
-import { cloudinaryImage } from "@keystone-next/cloudinary";
+import { relationship, text } from '@keystone-next/fields';
+import { list } from '@keystone-next/keystone/schema';
+import { cloudinaryImage } from '@keystone-next/cloudinary';
 
 export const cloudinary = {
   cloudName: process.env.CLOUDINARY_CLOUD_NAME,
@@ -14,14 +14,14 @@ export const ProductImage = list({
   fields: {
     image: cloudinaryImage({
       cloudinary,
-      label: 'Source'
+      label: 'Source',
     }),
     altText: text(),
-    product: relationship({ ref: 'Product.photos' }),
+    product: relationship({ ref: 'Product.photo' }),
   },
   ui: {
     listView: {
-      initialColumns: ['image', 'altText', 'product']
-    }
-  }
-})
+      initialColumns: ['image', 'altText', 'product'],
+    },
+  },
+});
