@@ -3,6 +3,7 @@ import ItemStyles from './styles/ItemStyles';
 import TitleStyles from './styles/TitleStyles';
 import PriceTagStyles from './styles/PriceTagStyles';
 import formatMoney from '../lib/formatMoney';
+import DeleteProduct from './DeleteProduct';
 
 export default function Product({ product }) {
   return (
@@ -19,12 +20,17 @@ export default function Product({ product }) {
       <PriceTagStyles>{formatMoney(product.price)}</PriceTagStyles>
       <p>{product.description}</p>
       <div className="buttonList">
-        <Link href={{
-          pathname: 'update',
-          query: {
-            id: product.id
-          }
-        }}>Edit</Link>
+        <Link
+          href={{
+            pathname: 'update',
+            query: {
+              id: product.id,
+            },
+          }}
+        >
+          Edit
+        </Link>
+        <DeleteProduct id={product.id}>Delete</DeleteProduct>
       </div>
     </ItemStyles>
   );
