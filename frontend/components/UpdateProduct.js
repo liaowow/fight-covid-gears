@@ -59,14 +59,6 @@ export default function UpdateProduct({ id }) {
             price: inputs.price,
           },
         }).catch(console.error);
-        console.log(res);
-        // // submit input fields to the backend
-        // const res = await createProduct();
-        // clearForm();
-        // // go to products page
-        // Router.push({
-        //   pathname: `/product/${res.data.createProduct.id}`,
-        // });
       }}
     >
       <ErrorMessage error={error || updateError} />
