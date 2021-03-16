@@ -33,7 +33,7 @@ export default function RequestReset() {
     <FormStyles method="POST" onSubmit={handleSubmit}>
       <h2>Reset Your Password</h2>
       <ErrorMessage error={error} />
-      <fieldset>
+      <fieldset disabled={loading} aria-busy={loading}>
         {data?.sendUserPasswordResetLink === null && (
           <p>Success! Check your email for a link.</p>
         )}

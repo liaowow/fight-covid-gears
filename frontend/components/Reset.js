@@ -43,8 +43,8 @@ export default function Reset({ token }) {
     <FormStyles method="POST" onSubmit={handleSubmit}>
       <h2>Reset Your Password</h2>
       <ErrorMessage error={error || successfulError} />
-      <fieldset>
-        {data?.sendUserPasswordResetLink === null && (
+      <fieldset disabled={loading} aria-busy={loading}>
+        {data?.redeemUserPasswordResetToken === null && (
           <p>Success! You can now log back in</p>
         )}
         <label htmlFor="email">
