@@ -6,13 +6,14 @@ import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
 import { withItemData, statelessSessions } from '@keystone-next/keystone/session';
 import { insertSeedData } from './seed-data';
+import { sendPasswordResetEmail } from './lib/mail';
 
 const databaseURL = process.env.DATABASE_URL || 'mongodb://localhost/keystone-fightcovidgear';
 
 const sessionConfig = {
   maxAge: 60 * 60 * 24 * 360, // define how long the user can stay signed in
   secret: process.env.COOKIE_SECRET,
-}
+};
 
 const { withAuth } = createAuth({
   listKey: 'User',
@@ -21,7 +22,12 @@ const { withAuth } = createAuth({
   initFirstItem: {
     fields: ['name', 'email', 'password'],
     // add initial roles here
-  }
+  },
+  passwordResetLink: {
+    async sendToken(args) {
+      await sendPasswordResetEmail(args.token, args.identity);
+    },
+  },
 });
 
 export default withAuth(config({
