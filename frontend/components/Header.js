@@ -2,6 +2,7 @@ import Link from 'next/link';
 import LogoStyles from './styles/LogoStyles';
 import HeaderStyles from './styles/HeaderStyles';
 import Nav from './Nav';
+import Cart from './Cart';
 
 export default function Header() {
   return (
@@ -10,11 +11,12 @@ export default function Header() {
         <LogoStyles>
           <Link href="/">Fight COVID</Link>
         </LogoStyles>
-      <Nav />
+        <Nav />
       </div>
       <div className="sub-bar">
         <p>Search an Item</p>
       </div>
+      <Cart />
     </HeaderStyles>
   );
 }
