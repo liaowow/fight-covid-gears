@@ -4,6 +4,7 @@ import 'dotenv/config';
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
+import { CartItem } from './schemas/CartItem';
 import { withItemData, statelessSessions } from '@keystone-next/keystone/session';
 import { insertSeedData } from './seed-data';
 import { sendPasswordResetEmail } from './lib/mail';
@@ -30,36 +31,37 @@ const { withAuth } = createAuth({
   },
 });
 
-export default withAuth(config({
-  server: {
-    cors: {
-      origin: [process.env.FRONTEND_URL],
-      credentials: true,
-    }
-  },
-  db: {
-    adapter: 'mongoose',
-    url: databaseURL,
-    async onConnect(keystone) {
-      if (process.argv.includes('--seed-data')) {
-        await insertSeedData(keystone);
+export default withAuth(
+  config({
+    server: {
+      cors: {
+        origin: [process.env.FRONTEND_URL],
+        credentials: true,
       }
-    }
-  },
-  lists: createSchema({
-    // schema items here
-    User,
-    Product,
-    ProductImage
-  }),
-  ui: {
-    // Show this UI only for people who pass this test
-    isAccessAllowed: ({ session }) => {
-      return !!session?.data;
     },
-  },
-  session: withItemData(statelessSessions(sessionConfig), {
-    // graphQL query
-    User: `id`
+    db: {
+      adapter: 'mongoose',
+      url: databaseURL,
+      async onConnect(keystone) {
+        if (process.argv.includes('--seed-data')) {
+          await insertSeedData(keystone);
+        }
+      },
+    },
+    lists: createSchema({
+      // schema items here
+      User,
+      Product,
+      ProductImage,
+      CartItem,
+    }),
+    ui: {
+      // Show this UI only for people who pass this test
+      isAccessAllowed: ({ session }) => !!session?.data,
+    },
+    session: withItemData(statelessSessions(sessionConfig), {
+      // graphQL query
+      User: `id`,
+    }),
   })
-}));
+);
