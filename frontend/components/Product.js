@@ -4,6 +4,7 @@ import TitleStyles from './styles/TitleStyles';
 import PriceTagStyles from './styles/PriceTagStyles';
 import formatMoney from '../lib/formatMoney';
 import DeleteProduct from './DeleteProduct';
+import AddToCart from './AddToCart';
 
 export default function Product({ product }) {
   return (
@@ -20,6 +21,7 @@ export default function Product({ product }) {
       <PriceTagStyles>{formatMoney(product.price)}</PriceTagStyles>
       <p>{product.description}</p>
       <div className="buttonList">
+        <AddToCart id={product.id} />
         <Link
           href={{
             pathname: '/update',
