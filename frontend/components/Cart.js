@@ -1,8 +1,10 @@
 import CartStyles from './styles/CartStyles';
 import CartItemStyles from './styles/CartItemStyles';
+import CloseButtonStyles from './styles/CloseButtonStyles';
 import { useUser } from './User';
 import formatMoney from '../lib/formatMoney';
 import calTotalPrice from '../lib/calTotalPrice';
+import { useCart } from '../lib/cartState';
 
 function CartItem({ cartItem }) {
   const { product } = cartItem;
@@ -29,11 +31,12 @@ function CartItem({ cartItem }) {
 
 export default function Cart() {
   const me = useUser();
+  const { cartOpen, closeCart } = useCart();
   if (!me) return null;
-  console.log(me);
   return (
-    <CartStyles open>
+    <CartStyles open={cartOpen}>
       <header>
+        <CloseButtonStyles type="button" onClick={closeCart}>&times;</CloseButtonStyles>
         <h2>{me.name}'s Cart</h2>
       </header>
       <ul>
