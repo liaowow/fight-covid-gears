@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
-  border-bottom: 1px solid var(--lightGrey);
+  border-bottom: 1px solid var(--grey);
   display: grid;
   grid-template-columns: auto 1fr auto;
   img {

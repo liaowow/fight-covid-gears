@@ -5,6 +5,7 @@ import { useUser } from './User';
 import formatMoney from '../lib/formatMoney';
 import calTotalPrice from '../lib/calTotalPrice';
 import { useCart } from '../lib/cartState';
+import RemoveFromCart from './RemoveFromCart';
 
 function CartItem({ cartItem }) {
   const { product } = cartItem;
@@ -25,6 +26,7 @@ function CartItem({ cartItem }) {
           </em>
         </p>
       </div>
+      <RemoveFromCart id={cartItem.id} />
     </CartItemStyles>
   );
 }
