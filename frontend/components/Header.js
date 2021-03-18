@@ -3,6 +3,7 @@ import LogoStyles from './styles/LogoStyles';
 import HeaderStyles from './styles/HeaderStyles';
 import Nav from './Nav';
 import Cart from './Cart';
+import Search from './Search';
 
 export default function Header() {
   return (
@@ -14,7 +15,7 @@ export default function Header() {
         <Nav />
       </div>
       <div className="sub-bar">
-        <p>Search an Item</p>
+        <Search />
       </div>
       <Cart />
     </HeaderStyles>
