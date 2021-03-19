@@ -36,9 +36,6 @@ export const rules = {
     if (!isLoggedIn({ session })) {
       return false;
     }
-    if (!isLoggedIn({ session })) {
-      return false;
-    }
     // 1. Do they have the permission of canManageProducts
     if (permissions.canManageOrders({ session })) {
       return true;
@@ -47,9 +44,6 @@ export const rules = {
     return { user: { id: session.itemId } };
   },
   canManageOrderItems({ session }: ListAccessArgs) {
-    if (!isLoggedIn({ session })) {
-      return false;
-    }
     if (!isLoggedIn({ session })) {
       return false;
     }
@@ -70,5 +64,15 @@ export const rules = {
     }
     // if not, only show available products
     return { status: 'AVAILABLE' };
+  },
+  canManageUsers({ session }: ListAccessArgs) {
+    if (!isLoggedIn({ session })) {
+      return false;
+    }
+    if (permissions.canManageUsers({ session })) {
+      return true;
+    }
+    // if not, they may only update themselves
+    return { id: session.itemId };
   },
 };
