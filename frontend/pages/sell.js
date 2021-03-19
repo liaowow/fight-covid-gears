@@ -1,9 +1,12 @@
 import CreateProduct from '../components/CreateProduct';
+import LoginGate from '../components/LoginGate';
 
 export default function SellPage() {
   return (
     <div>
-      <CreateProduct />
+      <LoginGate>
+        <CreateProduct />
+      </LoginGate>
     </div>
   );
 }
