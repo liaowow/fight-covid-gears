@@ -2,10 +2,13 @@ import { useMutation } from '@apollo/client';
 import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import gql from 'graphql-tag';
+import { useRouter } from 'next/dist/client/router';
 import nProgress from 'nprogress';
 import { useState } from 'react';
 import styled from 'styled-components';
+import { useCart } from '../lib/cartState';
 import CheckoutButtonStyles from './styles/CheckoutButtonStyles';
+import { CURRENT_USER_QUERY } from './User';
 
 const CheckoutFormStyles = styled.form`
   box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.04);
@@ -37,8 +40,13 @@ function CheckoutForm() {
   const [loading, setLoading] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
+  const router = useRouter();
+  const { closeCart } = useCart();
   const [checkout, { error: graphQLError }] = useMutation(
-    CREATE_ORDER_MUTATION
+    CREATE_ORDER_MUTATION,
+    {
+      refetchQueries: [{ query: CURRENT_USER_QUERY }],
+    }
   );
 
   async function handleSubmit(e) {
@@ -52,7 +60,6 @@ function CheckoutForm() {
       type: 'card',
       card: elements.getElement(CardElement),
     });
-    console.log(paymentMethod);
     // handle any errors from stripe
     if (error) {
       setError(error);
@@ -65,9 +72,13 @@ function CheckoutForm() {
         token: paymentMethod.id
       },
     });
-    console.log(`Completed the order: ${order}`);
     // change the page to View Order
+    router.push({
+      pathname: `/order/[id]`,
+      query: { id: order.data.checkout.id },
+    });
     // close the cart
+    closeCart();
     // turn off loader
     setLoading(false);
     nProgress.done();
