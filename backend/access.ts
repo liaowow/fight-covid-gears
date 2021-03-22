@@ -5,7 +5,7 @@ export function isLoggedIn({ session }: ListAccessArgs) {
   return !!session;
 }
 
-const generatePermissions = Object.fromEntries(
+const generatedPermissions = Object.fromEntries(
   permissionsList.map((permission) => [
     permission,
     function ({ session }: ListAccessArgs) {
@@ -16,7 +16,7 @@ const generatePermissions = Object.fromEntries(
 
 // permissions check
 export const permissions = {
-  ...generatePermissions,
+  ...generatedPermissions,
 };
 
 // rule-based function: decides who can CRUD which products
@@ -55,9 +55,6 @@ export const rules = {
     return { order: { user: { id: session.itemId } } };
   },
   canReadProducts({ session }: ListAccessArgs) {
-    if (!isLoggedIn({ session })) {
-      return false;
-    }
     // do they have the permission to see/read all products?
     if (permissions.canManageProducts({ session })) {
       return true;
