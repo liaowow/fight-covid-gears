@@ -75,7 +75,9 @@ async function checkout(
       total: charge.amount,
       charge: charge.id,
       items: { create: orderItems },
-    }
+      user: { connect: { id: userId }},
+    },
+    resolveFields: false,
   })
   // clean up old cart items
   const cartItemIds = user.cart.map(cartItem => cartItem.id);

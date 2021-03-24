@@ -6,7 +6,7 @@ import { isLoggedIn, rules } from '../access';
 export const Order = list({
   access: {
     create: isLoggedIn,
-    // read: rules.canOrder,
+    read: rules.canOrder,
     update: () => false,
     delete: () => false,
   },
