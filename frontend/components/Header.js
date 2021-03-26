@@ -10,8 +10,9 @@ export default function Header() {
     <HeaderStyles>
       <div className="bar">
         <LogoStyles>
-          <Link href="/">Fight COVID</Link>
+          <Link href="/">FIGHT COVID</Link>
         </LogoStyles>
+        <h3>Safety Gear Superstore</h3>
         <Nav />
       </div>
       <div className="sub-bar">

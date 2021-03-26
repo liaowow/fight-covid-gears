@@ -52,7 +52,10 @@ export default function OrdersPage() {
       <Head>
         <title>Your Orders ({allOrders.length}) </title>
       </Head>
-      <h2>You have {allOrders.length} orders!</h2>
+      <h2>
+        You have {allOrders.length} order
+        {allOrders.length === 1 ? '' : 's'}
+      </h2>
       <OrderUlStyles>
         {allOrders.map((order) => (
           <OrderItemStyles>

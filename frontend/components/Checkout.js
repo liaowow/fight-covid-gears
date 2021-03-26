@@ -1,5 +1,10 @@
 import { useMutation } from '@apollo/client';
-import { CardElement, Elements, useElements, useStripe } from '@stripe/react-stripe-js';
+import {
+  CardElement,
+  Elements,
+  useElements,
+  useStripe,
+} from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import gql from 'graphql-tag';
 import { useRouter } from 'next/dist/client/router';
@@ -69,7 +74,7 @@ function CheckoutForm() {
     // send token to keystone server via custom mutation
     const order = await checkout({
       variables: {
-        token: paymentMethod.id
+        token: paymentMethod.id,
       },
     });
     // change the page to View Order
