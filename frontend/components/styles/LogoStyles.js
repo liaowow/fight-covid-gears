@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const LogoStyles = styled.h1`
   font-size: 4rem;
   text-align: center;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 0 var(--offWhite);
   z-index: 2;
   a {
     cursor: pointer;

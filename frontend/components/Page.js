@@ -3,18 +3,17 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Header from './Header';
 
 const GlobalStyles = createGlobalStyle`
-  /* patua-one-regular - latin */
   @font-face {
-    font-family: 'Patua One';
+    font-family: 'Viga';
     font-style: normal;
     font-weight: 400;
-    src: url('/static/patua-one-v11-latin-regular.eot'); /* IE9 Compat Modes */
+    src: url('/static/viga-v9-latin-regular.eot'); /* IE9 Compat Modes */
     src: local(''),
-        url('/static/patua-one-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-        url('/static/patua-one-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-        url('/static/patua-one-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
-        url('/static/patua-one-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('/static/patua-one-v11-latin-regular.svg#PatuaOne') format('svg'); /* Legacy iOS */
+        url('/static/viga-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('/static/viga-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+        url('/static/viga-v9-latin-regular.woff') format('woff'), /* Modern Browsers */
+        url('/static/viga-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('/static/viga-v9-latin-regular.svg#Viga') format('svg'); /* Legacy iOS */
   }
 
   :root {
@@ -36,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Patua One', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Viga', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
     font-size: 1.5rem;
@@ -56,7 +55,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button {
-    font-family: 'Patua One', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Viga', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 `;
 
