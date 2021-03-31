@@ -4,8 +4,9 @@ const NavStyles = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
-  justify-self: end;
+  justify-content: center;
   font-size: 2rem;
+  background: var(--primary);
   a,
   button {
     padding: 1rem 3rem;
@@ -17,12 +18,13 @@ const NavStyles = styled.ul`
     font-size: 1em;
     background: none;
     border: 0;
+    color: var(--black, black);
     cursor: pointer;
     @media (max-width: 700px) {
-      font-size: 10px;
-      padding: 0 10px;
+      font-size: 1.5rem;
+      padding: 5px 10px;
     }
-    &:before {
+    /* &:before {
       content: '';
       width: 1px;
       background: var(--lightGray);
@@ -35,7 +37,7 @@ const NavStyles = styled.ul`
     }
     &:after {
       height: 2px;
-      background: var(--primary);
+      background: var(--black, black);
       content: '';
       width: 0;
       position: absolute;
@@ -44,25 +46,25 @@ const NavStyles = styled.ul`
       transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
       left: 50%;
       margin-top: 2rem;
-    }
+    } */
     &:hover,
     &:focus {
       outline: none;
       text-decoration: none;
-      &:after {
+      /* &:after {
         width: calc(100% - 60px);
       }
       @media (max-width: 700px) {
         width: calc(100% - 10px);
-      }
+      } */
     }
   }
-  @media (max-width: 1300px) {
-    border-top: 1px solid var(--primary);
+  /* @media (max-width: 1300px) {
+    border-top: 1px solid var(--black, black);
     width: 100%;
-    justify-content: center;
-    font-size: 1.5rem;
-  }
+    font-size: 2rem;
+    padding: 1rem;
+  } */
 `;
 
 export default NavStyles;

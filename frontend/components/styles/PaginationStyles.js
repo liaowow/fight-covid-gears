@@ -4,22 +4,22 @@ const PaginationStyles = styled.div`
   text-align: center;
   display: inline-grid;
   grid-template-columns: repeat(4, auto);
+  -webkit-box-align: stretch;
   align-items: stretch;
-  justify-content: center;
-  align-content: center;
-  margin: 2rem 0;
-  border: 1px solid var(--lightGray);
+  -webkit-box-pack: center;
+  place-content: center;
+  border: 1px solid lightgray;
   border-radius: 10px;
   & > * {
     margin: 0;
-    padding: 15px 30px;
-    border-right: 1px solid var(--lightGray);
+    padding: 10px 12px;
+    border-right: 1px solid lightgray;
     &:last-child {
       border-right: 0;
     }
   }
   a[aria-disabled='true'] {
-    color: grey;
+    color: lightgray;
     pointer-events: none;
   }
 `;

@@ -6,7 +6,7 @@ const HeaderStyles = styled.header`
   z-index: 10;
   background: white;
   .bar {
-    border-bottom: 10px solid var(--primary, black);
+    /* border-bottom: 10px solid var(--primary, black); */
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;

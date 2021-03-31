@@ -22,8 +22,9 @@ export const ALL_PRODUCTS_QUERY = gql`
 
 const ProductsListStyles = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 4rem;
+  padding: 2rem;
 `;
 
 export default function Products({ page }) {

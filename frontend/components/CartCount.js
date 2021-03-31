@@ -2,13 +2,14 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 
 const CartCountStyles = styled.div`
-  background: var(--primary);
-  color: black;
+  background: white;
+  color: var(--black);
   border-radius: 50%;
   padding: 0.5rem;
-  line-height: 2rem;
-  min-width: 3rem;
-  margin-left: 1rem;
+  line-height: 1.5rem;
+  min-width: 2.5rem;
+  margin-left: 0.5rem;
+  box-shadow: var(--boxShadow);
   font-feature-settings: 'tnum';
   font-variant-numeric: tabular-nums;
 `;

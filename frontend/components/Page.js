@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Viga', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     margin: 0;
+    color: var(--gray);
     font-size: 1.5rem;
     line-height: 2;
   }
@@ -57,12 +58,19 @@ const GlobalStyles = createGlobalStyle`
   button {
     font-family: 'Viga', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
+
+  @media only screen and (max-width: 600px) {
+    html {
+      width: fit-content;
+    }
+  }
 `;
 
 const InnerStyle = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
   padding: 2rem;
+  text-align: center;
 `;
 
 export default function Page({ children }) {
