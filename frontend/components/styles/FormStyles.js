@@ -23,18 +23,23 @@ const Form = styled.form`
   label {
     display: block;
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   input,
   textarea,
   select {
-    width: 100%;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
     padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid black;
+    border: 2px solid var(--gray, gray);
+    border-radius: 5px;
+    height: 30px;
     &:focus {
       outline: 0;
       border-color: var(--primary);
     }
+    font-family: 'Viga',--apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
   }
   button,
   input[type='submit'] {
@@ -49,6 +54,8 @@ const Form = styled.form`
   fieldset {
     border: 0;
     padding: 0;
+    width: 80%;
+    margin: 0 auto;
 
     &[disabled] {
       opacity: 0.5;

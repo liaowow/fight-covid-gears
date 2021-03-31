@@ -10,9 +10,9 @@ export default function Nav() {
   const { openCart } = useCart();
   return (
     <NavStyles>
+      <Link href="/products">products</Link>
       {user && (
         <>
-          <Link href="/products">products</Link>
           {/* <Link href="/sell">sell</Link> */}
           <Link href="/orders">orders</Link>
           {/* <Link href="/account">account</Link> */}
@@ -31,7 +31,8 @@ export default function Nav() {
       )}
       {!user && (
         <>
-          <Link href="/login">log in / sign up</Link>
+          <Link href="/login">log in</Link>
+          <Link href="/signup">sign up</Link>
         </>
       )}
     </NavStyles>
