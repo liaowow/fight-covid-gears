@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const HeaderStyles = styled.header`
-  position: sticky;
-  top: 0px;
   z-index: 10;
   background: white;
   .bar {

@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 const NavStyles = styled.ul`
+  position: sticky;
+  top: 0;
+  z-index: 10;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   font-size: 2rem;
   background: var(--primary);
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.5);
   a,
   button {
     padding: 1rem 3rem;

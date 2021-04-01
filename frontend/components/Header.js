@@ -7,18 +7,20 @@ import Search from './Search';
 
 export default function Header() {
   return (
-    <HeaderStyles>
-      <div className="bar">
-        <LogoStyles>
-          <Link href="/">FIGHT COVID</Link>
-        </LogoStyles>
-        <h3>Safety Gear Superstore</h3>
-        <Nav />
-      </div>
+    <>
+      <HeaderStyles>
+        <div className="bar">
+          <LogoStyles>
+            <Link href="/">FIGHT COVID</Link>
+          </LogoStyles>
+          <h3>Safety Gears Superstore</h3>
+        </div>
+        <Cart />
+      </HeaderStyles>
+      <Nav />
       <div className="sub-bar">
         <Search />
       </div>
-      <Cart />
-    </HeaderStyles>
+    </>
   );
 }
