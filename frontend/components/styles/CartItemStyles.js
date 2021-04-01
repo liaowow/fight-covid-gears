@@ -11,6 +11,7 @@ const CartItemStyles = styled.li`
   h3,
   p {
     margin: 0;
+    width: fit-content;
   }
 `;
 

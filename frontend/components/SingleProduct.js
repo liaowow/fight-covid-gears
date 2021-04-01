@@ -6,8 +6,7 @@ import ErrorMessage from './ErrorMessage';
 
 const ProductStyles = styled.div`
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-flow: column;
+
   max-width: var(--maxWidth);
   justify-content: center;
   align-items: center;
@@ -15,6 +14,14 @@ const ProductStyles = styled.div`
   img {
     width: 100%;
     object-fit: contain;
+  }
+  .details {
+    text-align: left;
+    line-height: 1.2;
+  }
+  @media screen and (min-width: 768px) {
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
   }
 `;
 

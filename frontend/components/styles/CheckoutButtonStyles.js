@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const CheckoutButtonStyles = styled.button`
   background: var(--primary);
-  color: black;
+  color: var(--black, black);
   font-weight: 500;
   border: 0;
   border-radius: 5px;

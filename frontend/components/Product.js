@@ -19,10 +19,10 @@ export default function Product({ product }) {
         <Link href={`/product/${product.id}`}>{product.name}</Link>
       </TitleStyles>
       <PriceTagStyles>{formatMoney(product.price)}</PriceTagStyles>
-      <p>{product.description}</p>
+      <p style={{ textAlign: 'left' }}>{product.description}</p>
       <div className="buttonList">
         <AddToCart id={product.id} />
-        <Link
+        {/* <Link
           href={{
             pathname: '/update',
             query: {
@@ -32,7 +32,7 @@ export default function Product({ product }) {
         >
           Edit
         </Link>
-        <DeleteProduct id={product.id}>Delete</DeleteProduct>
+        <DeleteProduct id={product.id}>Delete</DeleteProduct> */}
       </div>
     </ItemStyles>
   );
