@@ -13,11 +13,7 @@ export default function SignOut() {
   const [signout] = useMutation(SIGN_OUT_MUTATION, {
     refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
-  const router = useRouter();
-  // redirect to login page
-  router.push({
-    pathname: `/login`,
-  });
+
   return (
     <button type="button" onClick={signout}>
       Sign Out

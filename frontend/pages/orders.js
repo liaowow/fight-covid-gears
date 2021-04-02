@@ -58,7 +58,7 @@ export default function OrdersPage() {
       </h2>
       <OrderUlStyles>
         {allOrders.map((order) => (
-          <OrderItemStyles>
+          <OrderItemStyles key={order.id}>
             <Link href={`/order/${order.id}`}>
               <a>
                 <div className="order-meta">
