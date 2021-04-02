@@ -28,24 +28,22 @@ const ItemStyles = styled.div`
     /* background: var(--lightGray); */
     & > * {
       background: var(--primary);
+      color: var(--gray, black);
       border: 0;
-      /* font-size: 1rem; */
-      /* padding: 1rem; */
+      font-size: 2rem;
+      padding: 1rem;
       &:hover {
         cursor: pointer;
       }
     }
-    border: 0;
-    font-size: 1rem;
-    padding: 1rem;
     margin: 2rem auto;
-    border-radius: 10px;
     box-shadow: 0 1px 2px 2px rgb(0 0 0 / 4%);
+    width: auto;
     background: var(--primary);
-    width: fit-content;
-    &:hover {
-      cursor: pointer;
-    }
+    border: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
   }
 `;
 

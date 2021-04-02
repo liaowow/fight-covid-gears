@@ -11,17 +11,6 @@ const ADD_TO_CART_MUTATION = gql`
   }
 `;
 
-const addToCartStyles = styled.div`
-  border: 0;
-  font-size: 1rem;
-  padding: 1rem;
-  margin: 1rem auto;
-  border-radius: 10px;
-  box-shadow: var(--boxShadow);
-  background: var(--primary);
-  width: fit-content;
-`;
-
 export default function AddToCart({ id }) {
   const [addToCart, { loading }] = useMutation(ADD_TO_CART_MUTATION, {
     variables: { id },

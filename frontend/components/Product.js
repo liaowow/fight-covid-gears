@@ -5,8 +5,11 @@ import PriceTagStyles from './styles/PriceTagStyles';
 import formatMoney from '../lib/formatMoney';
 import DeleteProduct from './DeleteProduct';
 import AddToCart from './AddToCart';
+import { useUser } from './User';
+import Login from './Login';
 
 export default function Product({ product }) {
+  const me = useUser();
   return (
     <ItemStyles>
       <Link href={`/product/${product.id}`}>
@@ -21,7 +24,7 @@ export default function Product({ product }) {
       <PriceTagStyles>{formatMoney(product.price)}</PriceTagStyles>
       <p style={{ textAlign: 'left' }}>{product.description}</p>
       <div className="buttonList">
-        <AddToCart id={product.id} />
+        {me ? <AddToCart id={product.id} /> : null}
         {/* <Link
           href={{
             pathname: '/update',
