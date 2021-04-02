@@ -28,7 +28,9 @@ const SEARCH_PRODUCTS_QUERY = gql`
 
 export default function Search() {
   const router = useRouter();
-  const [findItems, { loading, data, error }] = useLazyQuery(SEARCH_PRODUCTS_QUERY, {
+  const [findItems, { loading, data, error }] = useLazyQuery(
+    SEARCH_PRODUCTS_QUERY,
+    {
       fetchPolicy: 'no-cache',
     }
   );
@@ -65,7 +67,7 @@ export default function Search() {
       <div {...getComboboxProps()}>
         <input {...getInputProps({
           type: 'search',
-          placeholder: 'Search for an item',
+          placeholder: 'Search for a product',
           id: 'search',
           className: loading ? 'loading' : '',
           })}
@@ -73,11 +75,14 @@ export default function Search() {
       </div>
       <DropDown {...getMenuProps()}>
         {isOpen &&
-          items.map((item, idx) => (
+          items.map((item, index) => (
             <DropDownItem
               key={item.id}
-              {...getItemProps({ item })}
-              highlighted={idx === highlightedIndex}
+              {...getItemProps({ 
+                item,
+                index,
+              })}
+              highlighted={index === highlightedIndex}
             >
               <img
                 src={item.photo.image.publicUrlTransformed}

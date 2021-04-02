@@ -96,7 +96,9 @@ function CheckoutForm() {
         <p style={{ fontSize: 'small' }}>{graphQLError.message}</p>
       )}
       <CardElement />
-      <CheckoutButtonStyles>Check Out</CheckoutButtonStyles>
+      <CheckoutButtonStyles>
+        {loading ? 'Processing...' : 'Check Out'}
+      </CheckoutButtonStyles>
     </CheckoutFormStyles>
   );
 }
