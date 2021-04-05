@@ -16,11 +16,6 @@ export default class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
           <link rel="shortcut icon" href="/static/favicon.png" />
-          <title>Fight COVID Gears</title>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
         </Head>
         <body>
           <Main />
