@@ -20,8 +20,6 @@ const LogoStyles = styled.h1`
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  background: url('static/vaccine.svg') center no-repeat;
-  background-size: contain;
   padding: 0 2rem;
 `;
 
