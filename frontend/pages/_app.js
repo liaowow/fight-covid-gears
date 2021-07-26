@@ -2,6 +2,7 @@
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import { ApolloProvider } from '@apollo/client';
+import PropTypes from 'prop-types';
 import Page from '../components/Page';
 import '../components/styles/nprogress.css';
 import withData from '../lib/withData';
@@ -30,6 +31,12 @@ MyApp.getInitialProps = async function ({ Component, ctx }) {
   }
   pageProps.query = ctx.query;
   return { pageProps };
+};
+
+MyApp.propTypes = {
+  Component: PropTypes.any,
+  pageProps: PropTypes.any,
+  apollo: PropTypes.any,
 };
 
 export default withData(MyApp);
