@@ -14,6 +14,7 @@ import styled from 'styled-components';
 import { useCart } from '../lib/cartState';
 import CheckoutButtonStyles from './styles/CheckoutButtonStyles';
 import { CURRENT_USER_QUERY } from './User';
+import { USER_ORDERS_QUERY } from '../pages/orders';
 
 const CheckoutFormStyles = styled.form`
   box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.04);
@@ -50,7 +51,10 @@ function CheckoutForm() {
   const [checkout, { error: graphQLError }] = useMutation(
     CREATE_ORDER_MUTATION,
     {
-      refetchQueries: [{ query: CURRENT_USER_QUERY }],
+      refetchQueries: [
+        { query: CURRENT_USER_QUERY },
+        { query: USER_ORDERS_QUERY },
+      ],
     }
   );
 
