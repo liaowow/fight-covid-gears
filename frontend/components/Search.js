@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useLazyQuery } from '@apollo/client';
 import { resetIdCounter, useCombobox } from 'downshift';
 import gql from 'graphql-tag';
@@ -28,12 +29,9 @@ const SEARCH_PRODUCTS_QUERY = gql`
 
 export default function Search() {
   const router = useRouter();
-  const [findItems, { loading, data, error }] = useLazyQuery(
-    SEARCH_PRODUCTS_QUERY,
-    {
-      fetchPolicy: 'no-cache',
-    }
-  );
+  const [findItems, { loading, data }] = useLazyQuery(SEARCH_PRODUCTS_QUERY, {
+    fetchPolicy: 'no-cache',
+  });
   const items = data?.searchTerms || [];
   const findItemsButChill = debounce(findItems, 350);
   resetIdCounter();
@@ -65,11 +63,12 @@ export default function Search() {
   return (
     <SearchStyles>
       <div {...getComboboxProps()}>
-        <input {...getInputProps({
-          type: 'search',
-          placeholder: 'Search for a product',
-          id: 'search',
-          className: loading ? 'loading' : '',
+        <input
+          {...getInputProps({
+            type: 'search',
+            placeholder: 'Search for a product',
+            id: 'search',
+            className: loading ? 'loading' : '',
           })}
         />
       </div>
@@ -78,7 +77,7 @@ export default function Search() {
           items.map((item, index) => (
             <DropDownItem
               key={item.id}
-              {...getItemProps({ 
+              {...getItemProps({
                 item,
                 index,
               })}
